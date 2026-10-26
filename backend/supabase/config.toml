@@ -1,0 +1,22 @@
+project_id = "flighthunter"
+
+[functions.prices]
+# Приложение анонимное (без аккаунтов), поэтому проверку JWT отключаем.
+# Защита от злоупотреблений: кэш + проверка входных параметров (позже добавим ключ приложения).
+verify_jwt = false
+
+[functions.cities]
+verify_jwt = false
+
+[functions.buy-link]
+verify_jwt = false
+
+[functions.sync]
+verify_jwt = false
+
+[functions.check-prices]
+# Защищена секретом CRON_SECRET (заголовок x-cron-secret), а не JWT.
+verify_jwt = false
+
+[functions.delete-device]
+verify_jwt = false

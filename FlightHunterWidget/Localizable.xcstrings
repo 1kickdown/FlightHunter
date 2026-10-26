@@ -1,0 +1,146 @@
+{
+  "sourceLanguage" : "ru",
+  "strings" : {
+    "Алматы → Будапешт" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Almaty → Budapest"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Алматы → Будапешт"
+          }
+        }
+      }
+    },
+    "Астана → Будапешт" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Astana → Budapest"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Астана → Будапешт"
+          }
+        }
+      }
+    },
+    "Добавьте направление в приложении" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a destination in the app"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавьте направление в приложении"
+          }
+        }
+      }
+    },
+    "Лучшая текущая цена по вашим направлениям." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The best current price across your destinations."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лучшая текущая цена по вашим направлениям."
+          }
+        }
+      }
+    },
+    "Лучшая цена" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Best price"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лучшая цена"
+          }
+        }
+      }
+    },
+    "Не удалось связаться с сервером. Проверьте интернет." : {
+
+    },
+    "Неверный адрес запроса" : {
+
+    },
+    "Нет свежих цен" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No recent prices"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет свежих цен"
+          }
+        }
+      }
+    },
+    "Нет цен" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No prices"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет цен"
+          }
+        }
+      }
+    },
+    "Ошибка запроса (код %lld)" : {
+
+    },
+    "Сервер временно недоступен. Попробуйте позже." : {
+
+    },
+    "Цены на билеты" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flight prices"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цены на билеты"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

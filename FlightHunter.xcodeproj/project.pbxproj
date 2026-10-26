@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		060184233078391C00DEA809 /* CityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060184223078391C00DEA809 /* CityPickerView.swift */; };
+		0601842530783BCC00DEA809 /* AddDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0601842430783BCC00DEA809 /* AddDestinationView.swift */; };
+		060184273078447700DEA809 /* Format+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060184263078447700DEA809 /* Format+Calendar.swift */; };
+		060184293078469100DEA809 /* PriceCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060184283078469100DEA809 /* PriceCalendarView.swift */; };
+		0601842B30784AA300DEA809 /* DestinationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0601842A30784AA300DEA809 /* DestinationDetailView.swift */; };
+		060184333087A6CA00DEA809 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060184323087A6C900DEA809 /* WidgetKit.framework */; };
+		060184353087A6CA00DEA809 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 060184343087A6CA00DEA809 /* SwiftUI.framework */; };
+		060184403087A6CD00DEA809 /* FlightHunterWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 060184303087A6C900DEA809 /* FlightHunterWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		060184493087A91500DEA809 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060184483087A91500DEA809 /* WidgetSnapshot.swift */; };
+		0601844A3087AC3500DEA809 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060184483087A91500DEA809 /* WidgetSnapshot.swift */; };
+		0601844B3087AC4000DEA809 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1649C3075B317009F58BC /* City.swift */; };
+		0601844C3087AC4700DEA809 /* PricesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1649A3075B1A7009F58BC /* PricesResponse.swift */; };
+		0601844D3087AC5400DEA809 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1649E3075B37E009F58BC /* APIClient.swift */; };
+		0601844E3087AC5C00DEA809 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164A63076B14B009F58BC /* Format.swift */; };
+		06B1649B3075B1A7009F58BC /* PricesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1649A3075B1A7009F58BC /* PricesResponse.swift */; };
+		06B1649D3075B317009F58BC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1649C3075B317009F58BC /* City.swift */; };
+		06B1649F3075B37E009F58BC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1649E3075B37E009F58BC /* APIClient.swift */; };
+		06B164A33076ADA0009F58BC /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164A23076ADA0009F58BC /* Destination.swift */; };
+		06B164A53076AFC3009F58BC /* InstallID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164A43076AFC3009F58BC /* InstallID.swift */; };
+		06B164A73076B14B009F58BC /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164A63076B14B009F58BC /* Format.swift */; };
+		06B164A93076B1D9009F58BC /* PricesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164A83076B1D9009F58BC /* PricesStore.swift */; };
+		06B164AC3076B280009F58BC /* DestinationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164AB3076B280009F58BC /* DestinationRow.swift */; };
+		06B164B03076B738009F58BC /* DestinationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164AF3076B738009F58BC /* DestinationListView.swift */; };
+		06B164B43078378A009F58BC /* CitiesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B164B33078378A009F58BC /* CitiesStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0601843E3087A6CD00DEA809 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000000000000000000000A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0601842F3087A6C900DEA809;
+			remoteInfo = FlightHunterWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		060184453087A6CD00DEA809 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				060184403087A6CD00DEA809 /* FlightHunterWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		060184223078391C00DEA809 /* CityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerView.swift; sourceTree = "<group>"; };
+		0601842430783BCC00DEA809 /* AddDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDestinationView.swift; sourceTree = "<group>"; };
+		060184263078447700DEA809 /* Format+Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Format+Calendar.swift"; sourceTree = "<group>"; };
+		060184283078469100DEA809 /* PriceCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCalendarView.swift; sourceTree = "<group>"; };
+		0601842A30784AA300DEA809 /* DestinationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailView.swift; sourceTree = "<group>"; };
+		060184303087A6C900DEA809 /* FlightHunterWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FlightHunterWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		060184323087A6C900DEA809 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		060184343087A6CA00DEA809 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		060184473087A7D400DEA809 /* FlightHunterWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlightHunterWidgetExtension.entitlements; sourceTree = "<group>"; };
+		060184483087A91500DEA809 /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
+		06B1649A3075B1A7009F58BC /* PricesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesResponse.swift; sourceTree = "<group>"; };
+		06B1649C3075B317009F58BC /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		06B1649E3075B37E009F58BC /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		06B164A23076ADA0009F58BC /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		06B164A43076AFC3009F58BC /* InstallID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallID.swift; sourceTree = "<group>"; };
+		06B164A63076B14B009F58BC /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		06B164A83076B1D9009F58BC /* PricesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesStore.swift; sourceTree = "<group>"; };
+		06B164AB3076B280009F58BC /* DestinationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationRow.swift; sourceTree = "<group>"; };
+		06B164AF3076B738009F58BC /* DestinationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationListView.swift; sourceTree = "<group>"; };
+		06B164B33078378A009F58BC /* CitiesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesStore.swift; sourceTree = "<group>"; };
+		A10000000000000000000001 /* FlightHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		060184443087A6CD00DEA809 /* Exceptions for "FlightHunterWidget" folder in "FlightHunterWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0601842F3087A6C900DEA809 /* FlightHunterWidgetExtension */;
+		};
+		06B164A13075B56C009F58BC /* Exceptions for "FlightHunter" folder in "FlightHunter" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A10000000000000000000006 /* FlightHunter */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		060184363087A6CA00DEA809 /* FlightHunterWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				060184443087A6CD00DEA809 /* Exceptions for "FlightHunterWidget" folder in "FlightHunterWidgetExtension" target */,
+			);
+			path = FlightHunterWidget;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000002 /* FlightHunter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				06B164A13075B56C009F58BC /* Exceptions for "FlightHunter" folder in "FlightHunter" target */,
+			);
+			path = FlightHunter;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0601842D3087A6C900DEA809 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				060184353087A6CA00DEA809 /* SwiftUI.framework in Frameworks */,
+				060184333087A6CA00DEA809 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		060184313087A6C900DEA809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				060184323087A6C900DEA809 /* WidgetKit.framework */,
+				060184343087A6CA00DEA809 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06B164983075B16A009F58BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				06B1649A3075B1A7009F58BC /* PricesResponse.swift */,
+				06B1649C3075B317009F58BC /* City.swift */,
+				06B164A23076ADA0009F58BC /* Destination.swift */,
+				060184483087A91500DEA809 /* WidgetSnapshot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		06B164993075B17D009F58BC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06B1649E3075B37E009F58BC /* APIClient.swift */,
+				06B164A43076AFC3009F58BC /* InstallID.swift */,
+				06B164A63076B14B009F58BC /* Format.swift */,
+				06B164A83076B1D9009F58BC /* PricesStore.swift */,
+				06B164B33078378A009F58BC /* CitiesStore.swift */,
+				060184263078447700DEA809 /* Format+Calendar.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		06B164AA3076B25B009F58BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06B164AB3076B280009F58BC /* DestinationRow.swift */,
+				06B164AF3076B738009F58BC /* DestinationListView.swift */,
+				060184223078391C00DEA809 /* CityPickerView.swift */,
+				0601842430783BCC00DEA809 /* AddDestinationView.swift */,
+				060184283078469100DEA809 /* PriceCalendarView.swift */,
+				0601842A30784AA300DEA809 /* DestinationDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000004 = {
+			isa = PBXGroup;
+			children = (
+				060184473087A7D400DEA809 /* FlightHunterWidgetExtension.entitlements */,
+				06B164AA3076B25B009F58BC /* Views */,
+				06B164993075B17D009F58BC /* Services */,
+				06B164983075B16A009F58BC /* Models */,
+				A10000000000000000000002 /* FlightHunter */,
+				060184363087A6CA00DEA809 /* FlightHunterWidget */,
+				060184313087A6C900DEA809 /* Frameworks */,
+				A10000000000000000000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A10000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000001 /* FlightHunter.app */,
+				060184303087A6C900DEA809 /* FlightHunterWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0601842F3087A6C900DEA809 /* FlightHunterWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 060184413087A6CD00DEA809 /* Build configuration list for PBXNativeTarget "FlightHunterWidgetExtension" */;
+			buildPhases = (
+				0601842C3087A6C900DEA809 /* Sources */,
+				0601842D3087A6C900DEA809 /* Frameworks */,
+				0601842E3087A6C900DEA809 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				060184363087A6CA00DEA809 /* FlightHunterWidget */,
+			);
+			name = FlightHunterWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = FlightHunterWidgetExtension;
+			productReference = 060184303087A6C900DEA809 /* FlightHunterWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A10000000000000000000006 /* FlightHunter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000000000000000000009 /* Build configuration list for PBXNativeTarget "FlightHunter" */;
+			buildPhases = (
+				A10000000000000000000007 /* Sources */,
+				A10000000000000000000003 /* Frameworks */,
+				A10000000000000000000008 /* Resources */,
+				060184453087A6CD00DEA809 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0601843F3087A6CD00DEA809 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A10000000000000000000002 /* FlightHunter */,
+			);
+			name = FlightHunter;
+			productName = FlightHunter;
+			productReference = A10000000000000000000001 /* FlightHunter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1000000000000000000000A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					0601842F3087A6C900DEA809 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+				};
+			};
+			buildConfigurationList = A1000000000000000000000B /* Build configuration list for PBXProject "FlightHunter" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+				Base,
+			);
+			mainGroup = A10000000000000000000004;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A10000000000000000000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10000000000000000000006 /* FlightHunter */,
+				0601842F3087A6C900DEA809 /* FlightHunterWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0601842E3087A6C900DEA809 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10000000000000000000008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0601842C3087A6C900DEA809 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0601844C3087AC4700DEA809 /* PricesResponse.swift in Sources */,
+				0601844E3087AC5C00DEA809 /* Format.swift in Sources */,
+				0601844B3087AC4000DEA809 /* City.swift in Sources */,
+				0601844A3087AC3500DEA809 /* WidgetSnapshot.swift in Sources */,
+				0601844D3087AC5400DEA809 /* APIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10000000000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B164A73076B14B009F58BC /* Format.swift in Sources */,
+				060184233078391C00DEA809 /* CityPickerView.swift in Sources */,
+				06B1649B3075B1A7009F58BC /* PricesResponse.swift in Sources */,
+				060184493087A91500DEA809 /* WidgetSnapshot.swift in Sources */,
+				0601842B30784AA300DEA809 /* DestinationDetailView.swift in Sources */,
+				060184293078469100DEA809 /* PriceCalendarView.swift in Sources */,
+				06B164A33076ADA0009F58BC /* Destination.swift in Sources */,
+				06B164B43078378A009F58BC /* CitiesStore.swift in Sources */,
+				06B164B03076B738009F58BC /* DestinationListView.swift in Sources */,
+				06B164A93076B1D9009F58BC /* PricesStore.swift in Sources */,
+				06B1649D3075B317009F58BC /* City.swift in Sources */,
+				0601842530783BCC00DEA809 /* AddDestinationView.swift in Sources */,
+				06B1649F3075B37E009F58BC /* APIClient.swift in Sources */,
+				06B164AC3076B280009F58BC /* DestinationRow.swift in Sources */,
+				060184273078447700DEA809 /* Format+Calendar.swift in Sources */,
+				06B164A53076AFC3009F58BC /* InstallID.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0601843F3087A6CD00DEA809 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0601842F3087A6C900DEA809 /* FlightHunterWidgetExtension */;
+			targetProxy = 0601843E3087A6CD00DEA809 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		060184423087A6CD00DEA809 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = FlightHunterWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JY5375TK7H;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlightHunterWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlightHunterWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickdown.FlightHunter.FlightHunterWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		060184433087A6CD00DEA809 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = FlightHunterWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = JY5375TK7H;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlightHunterWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlightHunterWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickdown.FlightHunter.FlightHunterWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A1000000000000000000000C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_TESTABILITY = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1000000000000000000000D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1000000000000000000000E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlightHunter/FlightHunter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY5375TK7H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlightHunter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickdown.FlightHunter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A1000000000000000000000F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlightHunter/FlightHunter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JY5375TK7H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlightHunter/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kickdown.FlightHunter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		060184413087A6CD00DEA809 /* Build configuration list for PBXNativeTarget "FlightHunterWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				060184423087A6CD00DEA809 /* Debug */,
+				060184433087A6CD00DEA809 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10000000000000000000009 /* Build configuration list for PBXNativeTarget "FlightHunter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000000000000000000000E /* Debug */,
+				A1000000000000000000000F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000000000000000000000B /* Build configuration list for PBXProject "FlightHunter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000000000000000000000C /* Debug */,
+				A1000000000000000000000D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1000000000000000000000A /* Project object */;
+}

@@ -1,0 +1,27 @@
+# Xcode
+xcuserdata/
+DerivedData/
+build/
+*.xcuserstate
+.DS_Store
+# Секреты — никогда не коммитим
+.env
+.env.*
+*.p8
+*.pem
+
+# Локальный бинарник Supabase CLI
+backend/bin/
+
+# Служебные файлы Supabase CLI (привязка к проекту)
+backend/supabase/.temp/
+backend/supabase/.branches/
+
+# Локальные настройки Claude Code (не нужны в репозитории)
+.claude/
+
+# Шаблон переменных окружения (без значений) должен попасть в репозиторий
+!backend/.env.example
+
+# Кэш графа проекта (пересоздаётся автоматически)
+graphify-out/cache/

@@ -1,0 +1,236 @@
+{
+  "FlightHunter/Assets.xcassets/AccentColor.colorset/Contents.json": {
+    "mtime": 1791304621.6095922,
+    "seen": 1792499802.485386,
+    "ast_hash": "6e4617d09186964048971d5cc214f904",
+    "semantic_hash": "6e4617d09186964048971d5cc214f904"
+  },
+  "FlightHunter/Assets.xcassets/AppIcon.appiconset/Contents.json": {
+    "mtime": 1791304621.609502,
+    "seen": 1792499802.4853902,
+    "ast_hash": "9a920fe4b488bdeccd380438f50485ae",
+    "semantic_hash": "9a920fe4b488bdeccd380438f50485ae"
+  },
+  "FlightHunter/Assets.xcassets/Contents.json": {
+    "mtime": 1791304621.6093848,
+    "seen": 1792499802.4853919,
+    "ast_hash": "5575ff6115dcf93b8ae6abb48031cdd7",
+    "semantic_hash": "5575ff6115dcf93b8ae6abb48031cdd7"
+  },
+  "FlightHunter/ContentView.swift": {
+    "mtime": 1791327941.514913,
+    "seen": 1792499802.4853928,
+    "ast_hash": "6d9bf1d2f1592cc584cccf3dc74773e5",
+    "semantic_hash": "6d9bf1d2f1592cc584cccf3dc74773e5"
+  },
+  "FlightHunter/FlightHunterApp.swift": {
+    "mtime": 1791394421.428121,
+    "seen": 1792499802.485394,
+    "ast_hash": "0a83e6ed8f078f98c0ccc48c73926147",
+    "semantic_hash": "0a83e6ed8f078f98c0ccc48c73926147"
+  },
+  "Models/City.swift": {
+    "mtime": 1791327209.2856064,
+    "seen": 1792499802.485395,
+    "ast_hash": "c82caa5ec715b3f8f4295397c0b2c9d1",
+    "semantic_hash": "c82caa5ec715b3f8f4295397c0b2c9d1"
+  },
+  "Models/Destination.swift": {
+    "mtime": 1791391950.1636293,
+    "seen": 1792499802.485396,
+    "ast_hash": "1ac2d5d036bf315ca7ba273c71b1d24c",
+    "semantic_hash": "1ac2d5d036bf315ca7ba273c71b1d24c"
+  },
+  "Models/PricesResponse.swift": {
+    "mtime": 1791327111.606749,
+    "seen": 1792499802.485397,
+    "ast_hash": "a4de4cb973ce32b46bb32c70bef46028",
+    "semantic_hash": "a4de4cb973ce32b46bb32c70bef46028"
+  },
+  "Services/APIClient.swift": {
+    "mtime": 1792443830.1627185,
+    "seen": 1792499802.485398,
+    "ast_hash": "ec1a6e7c84f1581024f032b87af6feb8",
+    "semantic_hash": "ec1a6e7c84f1581024f032b87af6feb8"
+  },
+  "Services/CitiesStore.swift": {
+    "mtime": 1791492480.903262,
+    "seen": 1792499802.485399,
+    "ast_hash": "625f66a2f08ff3b3c961d74d19b46d49",
+    "semantic_hash": "625f66a2f08ff3b3c961d74d19b46d49"
+  },
+  "Services/Format+Calendar.swift": {
+    "mtime": 1791495917.2372603,
+    "seen": 1792499802.4854,
+    "ast_hash": "88e0552e4b82c1c7f989fbaaa4f639e2",
+    "semantic_hash": "88e0552e4b82c1c7f989fbaaa4f639e2"
+  },
+  "Services/Format.swift": {
+    "mtime": 1791392293.0770805,
+    "seen": 1792499802.4854012,
+    "ast_hash": "b6dce393b23900db2c928c5e453f67af",
+    "semantic_hash": "b6dce393b23900db2c928c5e453f67af"
+  },
+  "Services/InstallID.swift": {
+    "mtime": 1791391894.0889297,
+    "seen": 1792499802.485402,
+    "ast_hash": "0e8ca57e243be492bf5a67e2c6894992",
+    "semantic_hash": "0e8ca57e243be492bf5a67e2c6894992"
+  },
+  "Services/PricesStore.swift": {
+    "mtime": 1792507592.3170066,
+    "seen": 1792847478.797935,
+    "ast_hash": "9937f585a95d05e93a7b4587c683f87b",
+    "semantic_hash": ""
+  },
+  "Views/AddDestinationPlaceholder.swift": {
+    "mtime": 1791393530.7034168,
+    "seen": 1792499802.4854028,
+    "ast_hash": "57df0075b95b66a943f4304a33b6daf5",
+    "semantic_hash": "57df0075b95b66a943f4304a33b6daf5"
+  },
+  "Views/AddDestinationView.swift": {
+    "mtime": 1791495024.1281843,
+    "seen": 1792499802.485404,
+    "ast_hash": "ff05f2490169af5b3285e029536710c6",
+    "semantic_hash": "ff05f2490169af5b3285e029536710c6"
+  },
+  "Views/CityPickerView.swift": {
+    "mtime": 1791493121.399076,
+    "seen": 1792499802.485405,
+    "ast_hash": "b01455c8696242392630b4eb1e8a7dbe",
+    "semantic_hash": "b01455c8696242392630b4eb1e8a7dbe"
+  },
+  "Views/DestinationDetailView.swift": {
+    "mtime": 1792443830.2582889,
+    "seen": 1792499802.485406,
+    "ast_hash": "65eeb5d42632be93731dcb9bcad92220",
+    "semantic_hash": "65eeb5d42632be93731dcb9bcad92220"
+  },
+  "Views/DestinationListView.swift": {
+    "mtime": 1792507592.338828,
+    "seen": 1792847478.798038,
+    "ast_hash": "623b5bb9e64e6b01edb21a5710aab547",
+    "semantic_hash": ""
+  },
+  "Views/DestinationRow.swift": {
+    "mtime": 1791393146.9433985,
+    "seen": 1792499802.485408,
+    "ast_hash": "9e0f45111d6b37060c093cae901c170c",
+    "semantic_hash": "9e0f45111d6b37060c093cae901c170c"
+  },
+  "Views/PriceCalendarView.swift": {
+    "mtime": 1792443830.166726,
+    "seen": 1792499802.485409,
+    "ast_hash": "4c7d32f6ffd3004ced0aeba7b11f2a6d",
+    "semantic_hash": "4c7d32f6ffd3004ced0aeba7b11f2a6d"
+  },
+  "backend/supabase/functions/buy-link/index.ts": {
+    "mtime": 1791500208.4199092,
+    "seen": 1792499802.48541,
+    "ast_hash": "11945d6502897e357f768c3b7810f614",
+    "semantic_hash": "11945d6502897e357f768c3b7810f614"
+  },
+  "backend/supabase/functions/cities/index.ts": {
+    "mtime": 1791326549.4624922,
+    "seen": 1792499802.4854112,
+    "ast_hash": "568b4b8c63c52bd6412b1bbfa0182dd9",
+    "semantic_hash": "568b4b8c63c52bd6412b1bbfa0182dd9"
+  },
+  "backend/supabase/functions/prices/index.ts": {
+    "mtime": 1792847390.86204,
+    "seen": 1792847478.7981682,
+    "ast_hash": "f926d7b87eba338983bb5ee91d75538f",
+    "semantic_hash": ""
+  },
+  "backend/supabase/migrations/20261006000000_price_cache.sql": {
+    "mtime": 1791305311.3605268,
+    "seen": 1792499802.485413,
+    "ast_hash": "",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1792499961.8025558,
+    "seen": 1792847478.7981708,
+    "ast_hash": "8f922e34d738434d51a79d13b90be18d",
+    "semantic_hash": ""
+  },
+  "site/index.html": {
+    "mtime": 1791325444.6438608,
+    "seen": 1792499802.485416,
+    "ast_hash": "b3f0ee4c25181fc5a695f832c4ee3a51",
+    "semantic_hash": "b3f0ee4c25181fc5a695f832c4ee3a51"
+  },
+  ".claude/settings.json": {
+    "mtime": 1792499961.8033533,
+    "seen": 1792847478.797539,
+    "ast_hash": "b034c62dcd6ebc23d6656606c7024b07",
+    "semantic_hash": ""
+  },
+  "FlightHunterWidget/Assets.xcassets/AccentColor.colorset/Contents.json": {
+    "mtime": 1792503626.1367707,
+    "seen": 1792847478.79772,
+    "ast_hash": "55019f7265dde0a78318b0807f98e847",
+    "semantic_hash": ""
+  },
+  "FlightHunterWidget/Assets.xcassets/AppIcon.appiconset/Contents.json": {
+    "mtime": 1792503628.994036,
+    "seen": 1792847478.797722,
+    "ast_hash": "cbe75704b2680422c4156009a528e292",
+    "semantic_hash": ""
+  },
+  "FlightHunterWidget/Assets.xcassets/Contents.json": {
+    "mtime": 1792503626.1387029,
+    "seen": 1792847478.7977228,
+    "ast_hash": "9deb2ada1cc834bbebf8bbad9c8978a1",
+    "semantic_hash": ""
+  },
+  "FlightHunterWidget/Assets.xcassets/WidgetBackground.colorset/Contents.json": {
+    "mtime": 1792503626.1336477,
+    "seen": 1792847478.797724,
+    "ast_hash": "55019f7265dde0a78318b0807f98e847",
+    "semantic_hash": ""
+  },
+  "FlightHunterWidget/FlightHunterWidget.swift": {
+    "mtime": 1792507592.2772624,
+    "seen": 1792847478.797725,
+    "ast_hash": "d9a629c362f5a132462e8a730029f667",
+    "semantic_hash": ""
+  },
+  "FlightHunterWidget/FlightHunterWidgetBundle.swift": {
+    "mtime": 1792503626.1236515,
+    "seen": 1792847478.797726,
+    "ast_hash": "8d674f0b126b3f8adfd1de27773ab7a3",
+    "semantic_hash": ""
+  },
+  "Models/WidgetSnapshot.swift": {
+    "mtime": 1792507592.3269823,
+    "seen": 1792847478.7978072,
+    "ast_hash": "572b7c20193550ff8fc8ce9301db477e",
+    "semantic_hash": ""
+  },
+  "backend/supabase/functions/_shared/prices.ts": {
+    "mtime": 1792847390.858991,
+    "seen": 1792847478.7980921,
+    "ast_hash": "61e7b1f348c020d08ffdf4b9c60428dd",
+    "semantic_hash": ""
+  },
+  "backend/supabase/functions/_shared/rules.ts": {
+    "mtime": 1792847390.8643785,
+    "seen": 1792847478.798093,
+    "ast_hash": "229cccd43678f684b6c5c64a8aa8c327",
+    "semantic_hash": ""
+  },
+  "backend/supabase/functions/check-prices/index.ts": {
+    "mtime": 1792847413.8739266,
+    "seen": 1792847478.79813,
+    "ast_hash": "b293e1319ba348f4d17bc59021e70e3a",
+    "semantic_hash": ""
+  },
+  "backend/supabase/functions/sync/index.ts": {
+    "mtime": 1792846918.7718039,
+    "seen": 1792847478.7981691,
+    "ast_hash": "66d254873e22adc8e772dca5f7ee7422",
+    "semantic_hash": ""
+  }
+}
