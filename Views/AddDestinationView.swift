@@ -8,23 +8,18 @@
 import SwiftUI
 import SwiftData
 
-
 private struct MonthOption: Identifiable {
     let key: String
     let title: String
     var id: String { key }
 }
 
-
-
 struct AddDestinationView: View {
-    // Если открыта из подсказки на пустом экране, города выбираются сами
     var preset: RoutePreset? = nil
 
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     private let citiesStore = CitiesStore.shared
-    
     
     @State private var origin: City?
     @State private var destination: City?
@@ -33,7 +28,6 @@ struct AddDestinationView: View {
     @State private var includeNearby = false
     @State private var currency = Currencies.initialChoice
     @State private var presetApplied = false
-    
     
     private static let months: [MonthOption] = {
         let calendar = Calendar.current
@@ -56,9 +50,6 @@ struct AddDestinationView: View {
         return origin.code != destination.code
     }
     
-    
-    
-    // Цвета значков в строках формы
     private let departureColor = Theme.brandLight
     private let arrivalColor = Color(red: 0.0, green: 0.62, blue: 0.80)
     private let monthColor = Color(red: 1.0, green: 0.58, blue: 0.0)
@@ -93,7 +84,6 @@ struct AddDestinationView: View {
                         HStack {
                             FormRowLabel(icon: "banknote", color: currencyColor, title: "Валюта")
                             Spacer()
-                            // Компактное меню: в строке коротко («USD · $»), в списке полные названия
                             Menu {
                                 Picker("Валюта", selection: $currency) {
                                     ForEach(Currencies.all, id: \.self) { code in
@@ -110,7 +100,6 @@ struct AddDestinationView: View {
                             }
                         }
                         Divider().padding(.vertical, 10)
-                        // Порог задаётся в выбранной валюте, знак валюты подставляется в подсказку
                         HStack(spacing: 12) {
                             IconTile(systemName: "bell.badge.fill", color: thresholdColor)
                             TextField("Порог, \(Format.symbol(for: currency)) (необязательно)", text: $thresholdText)
@@ -142,7 +131,6 @@ struct AddDestinationView: View {
                         .labelStyle(.iconOnly)
                 }
             }
-            // Главная кнопка всегда под рукой внизу экрана
             .safeAreaInset(edge: .bottom) {
                 Button(action: save) {
                     Text("Добавить направление")
@@ -159,9 +147,6 @@ struct AddDestinationView: View {
         }
     }
     
-    // MARK: - Сводка маршрута
-    
-    // Градиентная карточка вверху: коды городов крупно и кнопка «поменять местами»
     private var routeHero: some View {
         VStack(spacing: 12) {
             HStack(alignment: .center) {
@@ -207,8 +192,6 @@ struct AddDestinationView: View {
         }
     }
     
-    // MARK: - Элементы оформления
-    
     private func sectionTitle(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .font(.subheadline.weight(.semibold))
@@ -229,7 +212,6 @@ struct AddDestinationView: View {
             .cardStyle()
     }
     
-    // Строка «Откуда»/«Куда»: иконка, название, выбранный город и стрелка
     private func cityRow(icon: String, color: Color, title: LocalizedStringKey, value: String?) -> some View {
         HStack {
             FormRowLabel(icon: icon, color: color, title: title)
@@ -266,7 +248,6 @@ struct AddDestinationView: View {
                         value: origin?.displayName)
             }
             .buttonStyle(.plain)
-            // Как только список городов готов, подставляем маршрут-подсказку (один раз)
             .onAppear { applyPreset(cities) }
             Divider().padding(.vertical, 10)
             NavigationLink {
@@ -279,7 +260,6 @@ struct AddDestinationView: View {
         }
     }
 
-    // Выбирает города из подсказки на пустом экране
     private func applyPreset(_ cities: [City]) {
         guard !presetApplied, let preset else { return }
         presetApplied = true
@@ -297,7 +277,6 @@ struct AddDestinationView: View {
             month: month, threshold: threshold, includeNearby: includeNearby,
             originNameEn: origin.nameEn, destinationNameEn: destination.nameEn, currency: currency))
         Currencies.remember(currency)
-        // Самый подходящий момент спросить про уведомления: пользователь только что начал следить за ценой
         Task { await PushPermission.requestIfNeeded() }
         dismiss()
     }

@@ -15,7 +15,6 @@ struct CityPickerView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var query = ""
     
-    
     private let popularCodes = ["KGF", "ALA", "NQZ", "BUD", "VIE", "PRG", "WAW",
                                 "IST", "BER", "PAR", "ROM", "MOW"]
     
@@ -34,7 +33,6 @@ struct CityPickerView: View {
         }
         return Array(found.prefix(50))
     }
-    
     
     var body: some View {
         List {
@@ -69,7 +67,3 @@ struct CityPickerView: View {
         }
     }
 }
-
-//#Preview {
-//    CityPickerView()
-//}

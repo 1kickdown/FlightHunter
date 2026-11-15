@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Day: Codable, Identifiable, Hashable{
     let date: String
     let price: Int
@@ -18,8 +17,6 @@ struct Day: Codable, Identifiable, Hashable{
     
     var id: String { "\(date)|\(returnDate ?? "")|\(origin)|\(destination)" }
 }
-
-
 
 struct PricesResponse: Codable{
     let origin: String
@@ -33,4 +30,3 @@ struct PricesResponse: Codable{
     let cached: Bool
     let stale: Bool?
 }
-

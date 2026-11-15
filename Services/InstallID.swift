@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum InstallID {
     private static let key = "installID"
     
@@ -20,7 +19,6 @@ enum InstallID {
         return new
     }
 
-    // Забывает ID: при следующем обращении будет создан новый (используется при удалении данных).
     static func reset() {
         UserDefaults.standard.removeObject(forKey: key)
     }

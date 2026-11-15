@@ -14,8 +14,8 @@ struct WidgetDestination: Codable, Identifiable, Hashable {
     let destinationCode: String
     let month: String
     let includeNearby: Bool
-    let threshold: Int?          // порог в валюте направления
-    let currency: String         // валюта направления
+    let threshold: Int?
+    let currency: String
     var bestPrice: Int?
     var bestDate: String?
     
@@ -26,7 +26,6 @@ struct WidgetDestination: Codable, Identifiable, Hashable {
         return price <= threshold
     }
 }
-
 
 struct WidgetSnapshot: Codable {
     var destinations: [WidgetDestination]

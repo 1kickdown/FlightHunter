@@ -1,21 +1,11 @@
-//
-//  EmptyStateView.swift
-//  FlightHunter
-//
-//  Первый экран, пока нет ни одного направления: приветствие, главная кнопка
-//  и быстрые подсказки популярных маршрутов.
-//
-
 import SwiftUI
 
-// Готовый маршрут для быстрого добавления: форма откроется с уже выбранными городами
 struct RoutePreset: Identifiable, Equatable {
-    let origin: String       // код IATA
+    let origin: String
     let destination: String
-    let label: String        // подпись на кнопке
+    let label: String
     var id: String { origin + destination }
 
-    // Популярные маршруты нашей аудитории
     static var popular: [RoutePreset] {
         [
             RoutePreset(origin: "ALA", destination: "BUD", label: String(localized: "Алматы → Будапешт")),
@@ -32,7 +22,6 @@ struct EmptyStateView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 18) {
-                // Большая иконка, которая слегка «парит»
                 ZStack {
                     Circle().fill(Theme.gradient)
                     Image(systemName: "airplane")

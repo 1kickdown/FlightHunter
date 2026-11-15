@@ -1,16 +1,9 @@
-//
-//  BestDealCard.swift
-//  FlightHunter
-//
-//  Яркая карточка вверху списка: самая выгодная цена среди направлений.
-//
-
 import SwiftUI
 
 struct BestDealCard: View {
-    let route: String   // "Астана → Будапешт"
-    let price: String   // "78 456 ₸"
-    let date: String    // "30 нояб."
+    let route: String
+    let price: String
+    let date: String
 
     var body: some View {
         HStack(alignment: .center) {

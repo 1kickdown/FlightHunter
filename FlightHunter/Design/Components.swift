@@ -1,13 +1,5 @@
-//
-//  Components.swift
-//  FlightHunter
-//
-//  Небольшие повторно используемые элементы оформления.
-//
-
 import SwiftUI
 
-// Круглая иконка с самолётом на фирменном градиенте
 struct RouteIcon: View {
     var size: CGFloat = 46
 
@@ -25,7 +17,6 @@ struct RouteIcon: View {
     }
 }
 
-// Небольшой цветной бейдж: «Ниже порога», «через соседние города»
 struct Badge: View {
     let text: LocalizedStringKey
     let systemImage: String
@@ -50,11 +41,10 @@ struct Badge: View {
     }
 }
 
-// «Скелетон»: серая полоска, которая мягко мерцает, пока грузятся цены
 struct SkeletonBar: View {
     var width: CGFloat
     var height: CGFloat
-    var color: Color = .secondary      // на цветном фоне используем белый
+    var color: Color = .secondary
 
     var body: some View {
         RoundedRectangle(cornerRadius: height / 2.5, style: .continuous)
@@ -68,7 +58,6 @@ struct SkeletonBar: View {
     }
 }
 
-// Главная кнопка: капсула с градиентом
 struct GradientButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -83,7 +72,6 @@ struct GradientButtonStyle: ButtonStyle {
     }
 }
 
-// Заметная оранжевая кнопка «Купить»
 struct CTAButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -98,7 +86,6 @@ struct CTAButtonStyle: ButtonStyle {
     }
 }
 
-// Круглая кнопка со значком (переключатель месяцев)
 struct CircleIconButtonStyle: ButtonStyle {
     @Environment(\.colorScheme) private var scheme
     @Environment(\.isEnabled) private var isEnabled
@@ -115,7 +102,6 @@ struct CircleIconButtonStyle: ButtonStyle {
     }
 }
 
-// Цветная иконка слева в строке формы (как в системных настройках)
 struct IconTile: View {
     let systemName: String
     let color: Color
@@ -130,7 +116,6 @@ struct IconTile: View {
     }
 }
 
-// Иконка и название строки формы
 struct FormRowLabel: View {
     let icon: String
     let color: Color

@@ -1,23 +1,13 @@
-//
-//  Theme.swift
-//  FlightHunter
-//
-//  Единое место для цветов, градиентов и стилей оформления приложения.
-//  Чтобы поменять оттенки, достаточно править этот файл.
-//
-
 import SwiftUI
 import UIKit
 
 extension Color {
-    // Цвет, который сам меняется между светлой и тёмной темой
     static func adaptive(light: Color, dark: Color) -> Color {
         Color(UIColor { $0.userInterfaceStyle == .dark ? UIColor(dark) : UIColor(light) })
     }
 }
 
 enum Theme {
-    // Фирменный синий (как на иконке приложения)
     static let brandLight = Color(red: 0.12, green: 0.45, blue: 0.96)
     static let brandDark = Color(red: 0.04, green: 0.18, blue: 0.70)
 
@@ -25,19 +15,15 @@ enum Theme {
         LinearGradient(colors: [brandLight, brandDark], startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 
-    // Выгодная цена: тёмно-зелёный на светлом, светло-зелёный на тёмном (хороший контраст в обеих темах)
     static let good = Color.adaptive(light: Color(red: 0.04, green: 0.52, blue: 0.28),
                                      dark: Color(red: 0.36, green: 0.86, blue: 0.55))
 
-    // Акцент для заметных кнопок («Купить»)
     static let cta = Color(red: 0.90, green: 0.38, blue: 0.0)
 
-    // Цвет для текста и значков синего оттенка (в тёмной теме светлее)
     static let accent = Color.adaptive(light: Color(red: 0.10, green: 0.40, blue: 0.95),
                                        dark: Color(red: 0.40, green: 0.70, blue: 1.0))
 }
 
-// Фон экранов: мягкий голубой градиент (в тёмной теме — тёмно-синий)
 struct ThemeBackground: View {
     @Environment(\.colorScheme) private var scheme
 
@@ -51,7 +37,6 @@ struct ThemeBackground: View {
     }
 }
 
-// Карточка: скруглённая подложка с мягкой тенью
 struct CardStyle: ViewModifier {
     @Environment(\.colorScheme) private var scheme
 

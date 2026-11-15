@@ -8,7 +8,6 @@
 import Foundation
 import SwiftData
 
-
 @Model
 
 final class Destination{
@@ -16,12 +15,11 @@ final class Destination{
     var originName: String
     var destinationCode: String
     var destinationName: String
-    var originNameEn: String?        // английские названия (у старых направлений дозаполняются позже)
+    var originNameEn: String?
     var destinationNameEn: String?
     var month: String
-    // Порог цены в валюте направления. Раньше поле называлось thresholdKZT (originalName сохраняет старые данные)
     @Attribute(originalName: "thresholdKZT") var threshold: Int?
-    var currency: String = "kzt"      // валюта направления: kzt, rub, usd...
+    var currency: String = "kzt"
     var includeNearby: Bool
     var createdAt: Date
     
@@ -40,14 +38,8 @@ final class Destination{
         self.createdAt = Date()
     }
     
-    // Названия на языке интерфейса; если английского названия нет, показываем русское
     var displayOriginName: String { Format.isRussian ? originName : (originNameEn ?? originName) }
     var displayDestinationName: String { Format.isRussian ? destinationName : (destinationNameEn ?? destinationName) }
 
     var title: String { "\(displayOriginName) → \(displayDestinationName)" }
 }
-
-
-/// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
