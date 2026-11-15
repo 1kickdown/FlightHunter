@@ -1,11 +1,3 @@
-//
-//  AboutView.swift
-//  FlightHunter
-//
-//  Экран «О приложении»: как работает сервис, где покупаются билеты, ссылки
-//  и кнопка удаления всех данных пользователя.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -18,7 +10,6 @@ struct AboutView: View {
     @State private var errorText: String?
     @State private var didDelete = false
 
-    // "1.0 (1)": версия и номер сборки
     private var versionText: String {
         let info = Bundle.main.infoDictionary
         let version = info?["CFBundleShortVersionString"] as? String ?? "?"
@@ -90,13 +81,11 @@ struct AboutView: View {
         }
     }
 
-    // Удаляет данные на сервере, затем на устройстве. Если сервер недоступен, ничего не трогаем:
-    // пользователь увидит ошибку и сможет повторить.
     private func deleteAllData() async {
         isDeleting = true
         defer { isDeleting = false }
 
-        SyncService.shared.cancelPending()          // чтобы не ушла синхронизация во время удаления
+        SyncService.shared.cancelPending()
         do {
             try await APIClient.shared.deleteDeviceData(installId: InstallID.value)
         } catch {
@@ -104,10 +93,10 @@ struct AboutView: View {
             return
         }
 
-        SyncService.shared.reset()                  // забываем токен и признак синхронизации
-        try? context.delete(model: Destination.self) // все направления на устройстве
-        SharedStore.save(WidgetSnapshot(destinations: [], updatedAt: Date()))  // очищаем виджет
-        InstallID.reset()                           // новый ID, если пользователь начнёт заново
+        SyncService.shared.reset()
+        try? context.delete(model: Destination.self)
+        SharedStore.save(WidgetSnapshot(destinations: [], updatedAt: Date()))
+        InstallID.reset()
         didDelete = true
     }
 }

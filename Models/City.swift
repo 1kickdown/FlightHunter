@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct City: Codable, Identifiable, Hashable{
     let code: String
     let name: String
@@ -16,12 +15,9 @@ struct City: Codable, Identifiable, Hashable{
     
     var id: String { code }
 
-    // Название на языке интерфейса
     var displayName: String { Format.isRussian ? name : nameEn }
 }
-
 
 struct CitiesResponse: Codable{
     let cities: [City]
 }
-

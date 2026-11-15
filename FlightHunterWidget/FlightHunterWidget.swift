@@ -13,8 +13,6 @@ struct PriceEntry: TimelineEntry {
     let date: Date
     let destinations: [WidgetDestination]
     
-    // Направление с самой низкой ценой. Цены в разных валютах сравнивать нельзя (курсов у нас нет),
-    // поэтому берём валюту самого нового направления с ценой и ищем минимум среди направлений в ней.
     var best: WidgetDestination? {
         let priced = destinations.filter { $0.bestPrice != nil }
         guard let currency = priced.first?.currency else { return nil }
@@ -67,9 +65,7 @@ struct Provider: TimelineProvider {
     }
 }
 
-// Цвета виджета. Виджет — отдельный модуль, поэтому свои копии цветов приложения.
 enum WidgetTheme {
-    // Фирменный синий (как на иконке приложения)
     static let brandLight = Color(red: 0.12, green: 0.45, blue: 0.96)
     static let brandDark = Color(red: 0.04, green: 0.18, blue: 0.70)
 
@@ -77,12 +73,10 @@ enum WidgetTheme {
         LinearGradient(colors: [brandLight, brandDark], startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 
-    // Цвет выгодной цены: тёмно-зелёный на светлом фоне, светло-зелёный на тёмном
     static let good = Color(UIColor { $0.userInterfaceStyle == .dark
         ? UIColor(red: 0.36, green: 0.86, blue: 0.55, alpha: 1)
         : UIColor(red: 0.04, green: 0.52, blue: 0.28, alpha: 1) })
 
-    // Мягкий фон среднего виджета: светло-голубой днём, тёмно-синий ночью
     static var softBackground: LinearGradient {
         let top = Color(UIColor { $0.userInterfaceStyle == .dark
             ? UIColor(red: 0.09, green: 0.14, blue: 0.28, alpha: 1)
@@ -94,10 +88,9 @@ enum WidgetTheme {
     }
 }
 
-// Круглая иконка с самолётом
 private struct PlaneBadge: View {
     var size: CGFloat
-    var onGradient: Bool          // true — на синем фоне (полупрозрачный белый круг)
+    var onGradient: Bool
 
     var body: some View {
         ZStack {
@@ -129,7 +122,6 @@ struct FlighthunterWidgetEntryView: View {
                 mediumView
             }
         }
-        // Маленький виджет и пустое состояние — на синем градиенте, средний — на мягком светлом фоне
         .containerBackground(for: .widget) {
             if entry.destinations.isEmpty || family == .systemSmall {
                 WidgetTheme.gradient
@@ -139,7 +131,6 @@ struct FlighthunterWidgetEntryView: View {
         }
     }
     
-    // Направлений ещё нет
     private var emptyView: some View {
         VStack(spacing: 8) {
             PlaneBadge(size: 38, onGradient: true)
@@ -151,7 +142,6 @@ struct FlighthunterWidgetEntryView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
-    // Маленький: одна лучшая цена среди всех направлений
     private var smallView: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 6) {
@@ -176,7 +166,6 @@ struct FlighthunterWidgetEntryView: View {
                     if let date = best.bestDate {
                         Text(Format.day(date))
                     }
-                    // Галочка: цена ниже вашего порога
                     if best.isBelowThreshold {
                         Image(systemName: "checkmark.seal.fill")
                     }
@@ -191,7 +180,6 @@ struct FlighthunterWidgetEntryView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        // Большой полупрозрачный самолёт для настроения
         .background(alignment: .bottomTrailing) {
             Image(systemName: "airplane")
                 .font(.system(size: 76, weight: .semibold))
@@ -201,7 +189,6 @@ struct FlighthunterWidgetEntryView: View {
         }
     }
     
-    // Средний: до трёх направлений списком
     private var mediumView: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 6) {

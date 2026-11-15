@@ -20,7 +20,6 @@ final class PricesStore {
     private(set) var states: [String: PriceState] = [:]
     private(set) var version = 0
 
-    // Ключ запроса: одно направление + месяц + режим «соседние города»
     private func key(for d: Destination) -> String {
         "\(d.originCode)-\(d.destinationCode)-\(d.month)-\(d.includeNearby)-\(d.currency)"
     }
@@ -29,10 +28,8 @@ final class PricesStore {
         states[key(for: d)] ?? .loading
     }
 
-    // Загружает цены. force = true — принудительно обновить (pull-to-refresh).
     func load(_ d: Destination, force: Bool = false) async {
         let k = key(for: d)
-        // Уже загружено и обновлять не просят — ничего не делаем
         if !force, let s = states[k], case .loaded = s { return }
         if states[k] == nil { states[k] = .loading }
 

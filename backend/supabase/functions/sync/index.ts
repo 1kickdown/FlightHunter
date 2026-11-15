@@ -1,25 +1,7 @@
-// Edge Function "sync": приложение присылает свой анонимный ID, push-токен и список направлений,
-// сервер сохраняет их, чтобы потом проверять цены и слать пуши.
-//
-//   POST /functions/v1/sync
-//   {
-//     "install_id": "9b2f...-uuid",
-//     "push_token": "ab12...",          // можно null, если пуши не разрешены
-//     "environment": "sandbox",         // "sandbox" (отладка из Xcode) или "production"
-//     "locale": "ru",                   // язык интерфейса: "ru" или "en" (на нём пишется текст пуша)
-//     "destinations": [
-//       { "origin": "ALA", "destination": "BUD", "month": "2026-11",
-//         "include_nearby": false, "currency": "kzt", "threshold": 70000 }  // порог — в валюте направления
-//     ]
-//   }
-//
-// Присланный список считается полным: чего в нём нет, с сервера удаляется.
-// Аккаунтов нет: install_id (случайный UUID) служит секретным ключом устройства.
-
 import { createClient } from "npm:@supabase/supabase-js@2";
 import { DEFAULT_CURRENCY, isCurrency } from "../_shared/currencies.ts";
 
-const MAX_DESTINATIONS = 10; // лимит на устройство, защита от злоупотреблений
+const MAX_DESTINATIONS = 10;
 
 const db = createClient(
   Deno.env.get("SUPABASE_URL")!,
@@ -42,7 +24,6 @@ interface Destination {
   threshold: number | null;
 }
 
-// Проверяет одно направление; возвращает его в чистом виде или null, если оно некорректно.
 function cleanDestination(d: any): Destination | null {
   const origin = String(d?.origin ?? "").toUpperCase();
   const destination = String(d?.destination ?? "").toUpperCase();
@@ -57,7 +38,6 @@ function cleanDestination(d: any): Destination | null {
   return { origin, destination, month, include_nearby: d?.include_nearby === true, currency, threshold: t ?? null };
 }
 
-// Ключ направления для сравнения «что было» и «что стало»
 const keyOf = (d: { origin: string; destination: string; month: string; include_nearby: boolean; currency: string }) =>
   `${d.origin}|${d.destination}|${d.month}|${d.include_nearby}|${d.currency}`;
 
@@ -71,7 +51,6 @@ Deno.serve(async (req) => {
     return json({ error: "Тело запроса должно быть JSON" }, 400);
   }
 
-  // 1. Проверка входных данных
   const installId = String(body?.install_id ?? "").toLowerCase();
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(installId)) {
     return json({ error: "install_id — UUID" }, 400);
@@ -81,7 +60,7 @@ Deno.serve(async (req) => {
     return json({ error: "push_token — hex-строка токена APNs или null" }, 400);
   }
   const environment = body?.environment === "sandbox" ? "sandbox" : "production";
-  const locale = body?.locale === "en" ? "en" : "ru"; // любой другой язык — русский по умолчанию
+  const locale = body?.locale === "en" ? "en" : "ru";
 
   if (!Array.isArray(body?.destinations)) return json({ error: "destinations — список" }, 400);
   if (body.destinations.length > MAX_DESTINATIONS) {
@@ -94,7 +73,6 @@ Deno.serve(async (req) => {
     wanted.push(d);
   }
 
-  // 2. Устройство: создаём или обновляем токен
   const { error: deviceError } = await db.from("devices").upsert({
     install_id: installId,
     push_token: pushToken,
@@ -107,8 +85,6 @@ Deno.serve(async (req) => {
     return json({ error: "Не удалось сохранить устройство" }, 500);
   }
 
-  // 3. Подписки: добавляем новые, обновляем порог у существующих (служебные поля сохраняются),
-  //    удаляем те, которых в присланном списке больше нет.
   const rows = wanted.map((d) => ({ install_id: installId, ...d }));
   if (rows.length > 0) {
     const { error } = await db.from("subscriptions").upsert(rows, {

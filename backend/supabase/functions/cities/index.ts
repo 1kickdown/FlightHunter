@@ -1,30 +1,20 @@
-// Edge Function "cities": список городов для выбора в приложении.
-//
-//   GET /functions/v1/cities
-//
-// Берёт справочник Travelpayouts (русские названия), оставляет только города
-// с аэропортом, к которым можно купить билет, и сжимает до нужных полей.
-// Справочник общий для всех и меняется редко, поэтому кэшируем на сутки.
-// Приложение ходит только к нашему бэкенду, а не к Travelpayouts напрямую.
-
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 const SOURCE = "https://api.travelpayouts.com/data/ru/cities.json";
-const FALLBACK_SOURCE = "https://api.travelpayouts.com/data/cities.json"; // английский, если русский недоступен
+const FALLBACK_SOURCE = "https://api.travelpayouts.com/data/cities.json";
 const CACHE_KEY = "cities:ru";
-const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // сутки
+const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
 
 const db = createClient(
   Deno.env.get("SUPABASE_URL")!,
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
 );
 
-// Город в формате для приложения.
 interface City {
-  code: string; // код IATA, например "ALA"
-  name: string; // название на русском, например "Алматы"
-  name_en: string; // английское название — по нему тоже можно искать
-  country: string; // код страны, например "KZ"
+  code: string;
+  name: string;
+  name_en: string;
+  country: string;
 }
 
 function json(body: unknown, status = 200) {
@@ -72,7 +62,6 @@ Deno.serve(async (req) => {
     return json({ ...payload, cached: false });
   } catch (e) {
     console.error(e);
-    // Лучше отдать устаревший список, чем ничего.
     if (cached) return json({ ...cached.payload, cached: true, stale: true });
     return json({ error: "Не удалось получить список городов" }, 502);
   }

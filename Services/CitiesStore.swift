@@ -15,7 +15,6 @@ enum CitiesState {
     case failed(String)
 }
 
-
 @MainActor
 @Observable
 

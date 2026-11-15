@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 extension Format {
     private static let monthParser: DateFormatter = {
         let f = DateFormatter()
@@ -15,7 +14,6 @@ extension Format {
         f.dateFormat = "yyyy-MM"
         return f
     }()
-    
     
     static func currentMonth() -> String {
         monthParser.string(from: Date())
@@ -37,17 +35,15 @@ extension Format {
         return ((weekday + 5) % 7, range.count)
     }
     
-    // 66254 → "66к" (по-английски "66k")
     static func shortPrice(_ value: Int) -> String {
         guard value >= 1000 else { return "\(value)" }
         return String(localized: "\(Int((Double(value) / 1000).rounded()))к")
     }
 
-    // Подписи дней недели, начиная с понедельника: ["Пн", "Вт", ...] или ["Mon", "Tue", ...]
     static func weekdayHeaders() -> [String] {
         let formatter = DateFormatter()
         formatter.locale = locale
-        let symbols = formatter.shortStandaloneWeekdaySymbols ?? []   // начинается с воскресенья
+        let symbols = formatter.shortStandaloneWeekdaySymbols ?? []
         guard symbols.count == 7 else { return ["1", "2", "3", "4", "5", "6", "7"] }
         return (Array(symbols[1...]) + [symbols[0]]).map { $0.capitalized }
     }

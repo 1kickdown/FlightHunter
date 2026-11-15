@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 
-// Что нужно показать в окне добавления направления
 private struct AddRequest: Identifiable {
     let id = UUID()
     let preset: RoutePreset?
@@ -21,14 +20,9 @@ struct DestinationListView: View {
     
     @State private var store = PricesStore()
     @State private var showingAbout = false
-    // Запрос на открытие формы добавления (с маршрутом-подсказкой или без него).
-    // Через sheet(item:) маршрут гарантированно попадает в форму вместе с её открытием.
     @State private var addRequest: AddRequest?
-    // Открытые экраны навигации; нужен, чтобы пуш мог открыть конкретное направление
     @State private var path: [Destination] = []
     private let router = AppRouter.shared
-    
-    
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -62,13 +56,11 @@ struct DestinationListView: View {
             }
             .onChange(of: store.version) { syncWidget() }
             .onChange(of: destinations.count) { syncWidget() }
-            // Передаём список на сервер: при открытии списка и при любом изменении направлений
             .onChange(of: syncDestinations) { syncToServer() }
             .task {
                 syncToServer()
                 await fillEnglishNames()
             }
-            // Пользователь нажал на пуш: открываем нужное направление
             .onChange(of: router.pendingRoute, initial: true) { openPendingRoute() }
         }
     }
@@ -79,9 +71,6 @@ struct DestinationListView: View {
             onPick: { route in addRequest = AddRequest(preset: route) })
     }
     
-    // Самая выгодная цена среди направлений. Цены в разных валютах сравнивать нельзя,
-    // поэтому берём валюту самого нового направления с ценой и ищем минимум в ней.
-    // Карточку показываем, только если есть из чего выбирать (минимум два направления).
     private var bestDeal: (destination: Destination, price: Int, date: String)? {
         let priced: [(destination: Destination, best: Day)] = destinations.compactMap { d in
             if case .loaded(let response) = store.state(for: d),
@@ -111,7 +100,6 @@ struct DestinationListView: View {
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
             }
             ForEach(destinations) { destination in
-                // Невидимая ссылка поверх карточки: нажатие открывает экран, а стрелку рисует сама карточка
                 ZStack {
                     NavigationLink(value: destination) { EmptyView() }
                         .opacity(0)
@@ -138,9 +126,6 @@ struct DestinationListView: View {
         for index in offsets { context.delete(destinations[index] ) }
     }
     
-
-    // Направления, сохранённые до появления английского языка, не имеют английских названий:
-    // дозаполняем их из справочника городов.
     private func fillEnglishNames() async {
         guard destinations.contains(where: { $0.originNameEn == nil || $0.destinationNameEn == nil }) else { return }
         await CitiesStore.shared.load()
@@ -161,7 +146,6 @@ struct DestinationListView: View {
         SyncService.shared.updateDestinations(syncDestinations)
     }
 
-    // Находит направление из пуша среди сохранённых и открывает его экран
     private func openPendingRoute() {
         guard let route = router.pendingRoute else { return }
         if let match = destinations.first(where: {

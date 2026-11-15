@@ -7,18 +7,15 @@
 
 import SwiftUI
 
-// Календарная сетка месяца: в каждой клетке число и самая низкая цена на эту дату.
-// Нажатие на клетку с ценой открывает поиск билетов на эту дату (onSelect).
 struct PriceCalendarView: View {
-    let month: String          // "2026-11"
-    let days: [Day]            // цены из ответа бэкенда
-    let threshold: Int?        // порог пользователя; nil, если не задан
+    let month: String
+    let days: [Day]
+    let threshold: Int?
     let onSelect: (Day) -> Void
 
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 7)
     private let weekdays = Format.weekdayHeaders()
 
-    // Самый дешёвый вариант на каждую дату: ["2026-11-16": Day, ...]
     private var bestDayByDate: [String: Day] {
         Dictionary(days.map { ($0.date, $0) },
                    uniquingKeysWith: { $0.price <= $1.price ? $0 : $1 })
@@ -27,7 +24,6 @@ struct PriceCalendarView: View {
     private var priceByDate: [String: Int] { bestDayByDate.mapValues(\.price) }
     private var lowestPrice: Int? { priceByDate.values.min() }
 
-    // Дёшево: ниже порога пользователя, а если порога нет — нижняя четверть цен месяца
     private func isCheap(_ price: Int) -> Bool {
         if let threshold { return price <= threshold }
         let sorted = priceByDate.values.sorted()
@@ -37,7 +33,6 @@ struct PriceCalendarView: View {
 
     var body: some View {
         VStack(spacing: 6) {
-            // Подписи дней недели
             LazyVGrid(columns: columns, spacing: 4) {
                 ForEach(weekdays, id: \.self) {
                     Text($0).font(.caption.weight(.semibold)).foregroundStyle(.secondary)
@@ -45,7 +40,6 @@ struct PriceCalendarView: View {
             }
             if let layout = Format.monthLayout(month) {
                 LazyVGrid(columns: columns, spacing: 4) {
-                    // Одна общая нумерация клеток: сначала пустые (до 1-го числа), затем дни месяца
                     ForEach(0..<(layout.leadingBlanks + layout.dayCount), id: \.self) { index in
                         let day = index - layout.leadingBlanks + 1
                         if day >= 1 {
@@ -59,7 +53,6 @@ struct PriceCalendarView: View {
         }
     }
 
-    // Клетка дня: если на эту дату есть цена, она нажимается
     @ViewBuilder
     private func cell(_ day: Int) -> some View {
         let key = "\(month)-" + String(format: "%02d", day)
@@ -75,8 +68,6 @@ struct PriceCalendarView: View {
         let cheap = price.map(isCheap) ?? false
         let isLowest = price != nil && price == lowestPrice
 
-        // Самый дешёвый день месяца залит синим с белым текстом, «выгодные» дни — светло-зелёные,
-        // остальные с ценой — нейтральные, дни без цены — только число
         let fill: Color = isLowest ? Theme.brandLight
             : cheap ? Theme.good.opacity(0.16)
             : price != nil ? Color.primary.opacity(0.06) : .clear
@@ -90,7 +81,7 @@ struct PriceCalendarView: View {
                     .font(.system(.caption, design: .rounded).weight(.bold))
                     .foregroundStyle(isLowest ? Color.white : (cheap ? Theme.good : Color.primary))
             } else {
-                Text(" ").font(.caption)   // сохраняем высоту клетки
+                Text(" ").font(.caption)
             }
         }
         .frame(maxWidth: .infinity, minHeight: 46)

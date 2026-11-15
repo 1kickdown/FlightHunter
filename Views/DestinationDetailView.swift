@@ -4,8 +4,6 @@
 //
 //  Created by kickdown on 09.10.2026.
 //
-//  Экран направления: шапка с лучшей ценой месяца, переключатель месяцев,
-//  календарь цен и список самых дешёвых дат с кнопкой «Купить».
 //
 
 import SwiftUI
@@ -15,9 +13,9 @@ struct DestinationDetailView: View {
     
     @State private var month: String
     @State private var state: PriceState = .loading
-    @Environment(\.openURL) private var openURL     // открывает ссылку в Safari
-    @State private var buyingID: String?            // у какой даты сейчас готовится ссылка
-    @State private var buyError: String?            // текст ошибки, если ссылку получить не удалось
+    @Environment(\.openURL) private var openURL
+    @State private var buyingID: String?
+    @State private var buyError: String?
     
     init(destination: Destination){
         self.destination = destination
@@ -50,8 +48,6 @@ struct DestinationDetailView: View {
             Text(buyError ?? "")
         }
     }
-    
-    // MARK: - Шапка с лучшей ценой месяца
     
     @ViewBuilder
     private var hero: some View {
@@ -99,7 +95,6 @@ struct DestinationDetailView: View {
         }
     }
     
-    // Градиентная подложка шапки с полупрозрачным самолётом
     private func heroContainer<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
         ZStack(alignment: .trailing) {
             content().frame(maxWidth: .infinity, alignment: .leading)
@@ -112,8 +107,6 @@ struct DestinationDetailView: View {
         .background(Theme.gradient, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
         .shadow(color: Theme.brandDark.opacity(0.35), radius: 14, y: 8)
     }
-    
-    // MARK: - Переключатель месяцев
     
     private var canGoBack: Bool { month > Format.currentMonth() }
     private var canGoForward: Bool {
@@ -140,8 +133,6 @@ struct DestinationDetailView: View {
         }
     }
     
-    // MARK: - Содержимое по состоянию загрузки
-    
     @ViewBuilder
     private var content: some View {
         switch state {
@@ -165,7 +156,6 @@ struct DestinationDetailView: View {
         
         case .loaded(let response):
             if response.noFreshPrices || response.days.isEmpty {
-                // Данных нет, это не ошибка
                 VStack(spacing: 10) {
                     Image(systemName: "moon.zzz")
                         .font(.system(size: 40))
@@ -198,7 +188,6 @@ struct DestinationDetailView: View {
         }
     }
     
-    // «Скелетоны» календаря и списка, пока грузятся цены
     private var loadingCards: some View {
         VStack(spacing: 18) {
             VStack(spacing: 8) {
@@ -256,8 +245,6 @@ struct DestinationDetailView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
-    // MARK: - Список самых дешёвых дат
-    
     private func cheapestList(_ days: [Day]) -> some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Самые дешёвые даты")
@@ -272,7 +259,6 @@ struct DestinationDetailView: View {
                                     .font(.caption)
                                     .foregroundStyle(Theme.good)
                             }
-                            // "16 нояб." или "16 нояб. → 23 нояб.", если билет туда-обратно
                             Text(dateText(day))
                                 .font(.body.weight(.semibold))
                         }
@@ -318,14 +304,12 @@ struct DestinationDetailView: View {
     }
     
     private func transfersText(_ n: Int) -> String {
-        // Склонение («1 пересадка», «2 пересадки», «5 пересадок») задано в каталоге строк
         if n == 0 { return String(localized: "прямой рейс") }
         return String(localized: "\(n) пересадок")
     }
     
-    // Запрашивает у нашего бэкенда партнёрскую ссылку и открывает поиск на Aviasales.
     private func buy(_ day: Day) async {
-        guard buyingID == nil else { return }   // уже готовится другая ссылка
+        guard buyingID == nil else { return }
         buyingID = day.id
         defer { buyingID = nil }
         do {

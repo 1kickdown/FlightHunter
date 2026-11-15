@@ -1,10 +1,3 @@
-//
-//  DestinationRow.swift
-//  FlightHunter
-//
-//  Карточка направления в списке: иконка, маршрут, крупная цена и бейджи.
-//
-
 import SwiftUI
 
 struct DestinationRow: View {
@@ -15,7 +8,6 @@ struct DestinationRow: View {
         HStack(alignment: .top, spacing: 14) {
             RouteIcon(size: 46)
             VStack(alignment: .leading, spacing: 6) {
-                // До двух строк, чтобы при крупном системном шрифте названия не обрезались
                 Text(destination.title)
                     .font(.headline)
                     .lineLimit(2)
@@ -35,7 +27,6 @@ struct DestinationRow: View {
         .cardStyle()
     }
     
-    // "ALA → BUD · Октябрь 2026"
     private var subtitle: String {
         "\(destination.originCode) → \(destination.destinationCode) · \(Format.month(destination.month))"
     }
@@ -44,7 +35,6 @@ struct DestinationRow: View {
     private var priceBlock: some View {
         switch state {
         case .loading:
-            // «Скелетон» вместо крутилки: видно, где появится цена
             VStack(alignment: .leading, spacing: 8) {
                 SkeletonBar(width: 130, height: 24)
                 SkeletonBar(width: 90, height: 12)
@@ -70,7 +60,6 @@ struct DestinationRow: View {
                     badges(belowThreshold: belowThreshold)
                 }
             } else {
-                // Данных нет — это не ошибка
                 VStack(alignment: .leading, spacing: 8) {
                     Label("Нет свежих цен", systemImage: "moon.zzz")
                         .font(.subheadline)
@@ -81,7 +70,6 @@ struct DestinationRow: View {
         }
     }
     
-    // Бейджи: «Ниже порога» и «через соседние города»
     @ViewBuilder
     private func badges(belowThreshold: Bool) -> some View {
         if belowThreshold || destination.includeNearby {
